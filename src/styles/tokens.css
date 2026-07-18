@@ -1,0 +1,196 @@
+/* =========================================================
+   扔鸡蛋 / Egg Toss — Design Tokens
+   Mode-aware: vent (chaos) vs merit (zen). One shared neutral spine.
+   All values are CSS variables; semantic tokens reference base tokens.
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap");
+
+:root {
+  /* ─── Vent palette (chaos / sin) ─────────────────────────── */
+  --vent-vermilion:   #C8362A;   /* 朱红, primary anger */
+  --vent-vermilion-2: #9A2519;   /* deeper, for press / shadow */
+  --vent-yolk:        #F2B72E;   /* 蛋黄 */
+  --vent-yolk-2:      #C28D14;
+  --vent-cabbage:     #6B8F3C;   /* 菜绿 */
+  --vent-cabbage-2:   #4A6B22;
+  --vent-ink:         #1A1612;   /* near-black, slightly warm */
+  --vent-ink-2:       #2B2620;
+
+  /* ─── Merit palette (zen / redemption) ────────────────────── */
+  --merit-jade:       #7BA889;   /* 玉, yellow-green */
+  --merit-jade-2:     #5C8A6B;
+  --merit-wood:       #8B5E3C;   /* 木 */
+  --merit-wood-2:     #6B4528;
+  --merit-rice:       #F4ECD8;   /* 米白, paper */
+  --merit-rice-2:     #E8DDC0;
+  --merit-gold:       #C8A24B;   /* 金 */
+  --merit-gold-2:     #9C7A2E;
+
+  /* ─── Shared neutral spine ───────────────────────────────── */
+  --ink-100: #1A1612;            /* primary text */
+  --ink-80:  #3D372F;            /* secondary text */
+  --ink-60:  #6B6358;            /* tertiary, captions */
+  --ink-40:  #9C9286;            /* disabled / hint */
+  --ink-20:  #D4CCBE;            /* subtle border */
+  --ink-10:  #E8E1D2;            /* divider */
+  --paper:   #F7F1E2;            /* 宣纸, primary surface */
+  --paper-2: #FBF7EC;            /* elevated surface */
+  --paper-3: #FDFBF4;            /* highest surface */
+  --seal-red:#A8281C;            /* 朱印, reserved for logo + final CTA only */
+
+  /* ─── Semantic colors (mode-agnostic) ────────────────────── */
+  --fg-1: var(--ink-100);
+  --fg-2: var(--ink-80);
+  --fg-3: var(--ink-60);
+  --fg-disabled: var(--ink-40);
+  --fg-on-dark: var(--paper);
+
+  --bg-1: var(--paper);
+  --bg-2: var(--paper-2);
+  --bg-3: var(--paper-3);
+  --border: var(--ink-20);
+  --divider: var(--ink-10);
+
+  --accent: var(--seal-red);
+  --success: var(--merit-jade);
+  --warning: var(--vent-yolk);
+  --danger:  var(--vent-vermilion);
+
+  /* ─── Typography ─────────────────────────────────────────── */
+  --font-display: "ZCOOL KuaiLe", "Noto Sans SC", system-ui, sans-serif;
+  --font-brush:   "Ma Shan Zheng", "Noto Serif SC", serif;
+  --font-body:    "Noto Sans SC", "Inter", system-ui, sans-serif;
+  --font-body-en: "Inter", "Noto Sans SC", system-ui, sans-serif;
+  --font-serif:   "Noto Serif SC", "Lora", Georgia, serif;
+  --font-num:     "Inter", ui-monospace, monospace;
+
+  --fz-display-xl: 56px;
+  --fz-display-lg: 40px;
+  --fz-display-md: 28px;
+  --fz-h1: 32px;
+  --fz-h2: 24px;
+  --fz-h3: 20px;
+  --fz-h4: 18px;
+  --fz-body: 16px;
+  --fz-small: 14px;
+  --fz-caption: 12px;
+
+  --lh-tight:   1.1;
+  --lh-snug:    1.25;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.7;   /* sutra body */
+
+  --tr-tight:  -0.01em;
+  --tr-normal: 0;
+  --tr-loose:  0.04em;  /* hit-feedback caps */
+
+  /* ─── Spacing (4px base) ─────────────────────────────────── */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;   /* mobile gutter */
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* ─── Radii ──────────────────────────────────────────────── */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-full: 999px;
+
+  /* ─── Shadows ────────────────────────────────────────────── */
+  /* warm, not blue. Two tiers only. */
+  --shadow-soft:   0 4px 16px -4px rgba(60, 40, 20, 0.18), 0 1px 2px rgba(60, 40, 20, 0.08);
+  --shadow-stamp:  3px 3px 0 0 rgba(26, 22, 18, 0.9);
+  --shadow-press:  inset 0 2px 4px rgba(26, 22, 18, 0.25);
+
+  /* ─── Motion ─────────────────────────────────────────────── */
+  --ease-emph:    cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-snap:    cubic-bezier(0.2, 0.9, 0.3, 1.4);
+  --ease-quiet:   cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 380ms;
+  --dur-page: 600ms;
+
+  /* ─── Hit targets ─────────────────────────────────────────── */
+  --hit-min: 48px;
+  --hit-cta: 64px;
+  --hit-throw: 96px;
+}
+
+/* ─── Mode scopes ──────────────────────────────────────────────
+   Add data-mode="vent" or data-mode="merit" on a wrapper to swap
+   the active mode color. UI components can reference --mode-*.
+   ──────────────────────────────────────────────────────────── */
+[data-mode="vent"] {
+  --mode-bg:        var(--vent-ink);
+  --mode-fg:        var(--paper);
+  --mode-accent:    var(--vent-vermilion);
+  --mode-accent-2:  var(--vent-vermilion-2);
+  --mode-warm:      var(--vent-yolk);
+  --mode-cool:      var(--vent-cabbage);
+  --mode-grain-opacity: 0.18;
+}
+[data-mode="merit"] {
+  --mode-bg:        var(--merit-rice);
+  --mode-fg:        var(--ink-100);
+  --mode-accent:    var(--merit-gold);
+  --mode-accent-2:  var(--merit-gold-2);
+  --mode-warm:      var(--merit-wood);
+  --mode-cool:      var(--merit-jade);
+  --mode-grain-opacity: 0.08;
+}
+
+/* ─── Semantic type classes (drop-in) ────────────────────────── */
+.t-display-xl { font: 700 var(--fz-display-xl)/var(--lh-tight) var(--font-display); letter-spacing: var(--tr-tight); }
+.t-display-lg { font: 400 var(--fz-display-lg)/var(--lh-tight) var(--font-display); letter-spacing: var(--tr-tight); }
+.t-display-md { font: 400 var(--fz-display-md)/var(--lh-snug) var(--font-display); }
+.t-brush-lg   { font: 400 var(--fz-display-lg)/var(--lh-snug) var(--font-brush); }
+.t-brush-md   { font: 400 var(--fz-display-md)/var(--lh-snug) var(--font-brush); }
+.t-h1   { font: 700 var(--fz-h1)/var(--lh-snug) var(--font-body); letter-spacing: var(--tr-tight); }
+.t-h2   { font: 700 var(--fz-h2)/var(--lh-snug) var(--font-body); }
+.t-h3   { font: 600 var(--fz-h3)/var(--lh-snug) var(--font-body); }
+.t-h4   { font: 600 var(--fz-h4)/var(--lh-normal) var(--font-body); }
+.t-body { font: 400 var(--fz-body)/var(--lh-normal) var(--font-body); }
+.t-body-em { font: 500 var(--fz-body)/var(--lh-normal) var(--font-body); }
+.t-small { font: 400 var(--fz-small)/var(--lh-normal) var(--font-body); color: var(--fg-2); }
+.t-caption { font: 500 var(--fz-caption)/var(--lh-normal) var(--font-body); color: var(--fg-3); letter-spacing: var(--tr-loose); text-transform: uppercase; }
+.t-sutra { font: 400 var(--fz-body)/var(--lh-relaxed) var(--font-serif); }
+.t-num   { font: 600 var(--fz-h2)/var(--lh-tight) var(--font-num); font-variant-numeric: tabular-nums; }
+.t-hit   { font: 700 var(--fz-display-lg)/var(--lh-tight) var(--font-display); letter-spacing: var(--tr-loose); text-transform: uppercase; }
+
+/* ─── Utility surfaces ───────────────────────────────────────── */
+.surface-paper { background: var(--paper); color: var(--fg-1); }
+.surface-paper-2 { background: var(--paper-2); color: var(--fg-1); }
+.surface-ink { background: var(--vent-ink); color: var(--paper); }
+
+/* Subtle paper grain — apply via .grain on a wrapper */
+.grain { position: relative; isolation: isolate; }
+.grain::after {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: var(--mode-grain-opacity, 0.08);
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+.grain > * { position: relative; z-index: 1; }
+
+/* Press feedback */
+.press { transition: transform var(--dur-fast) var(--ease-snap), filter var(--dur-fast) var(--ease-quiet); }
+.press:active { transform: scale(0.96); filter: brightness(0.92); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 120ms !important;
+    transition-duration: 120ms !important;
+  }
+}

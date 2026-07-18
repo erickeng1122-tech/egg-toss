@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 96">
+  <defs>
+    
+  </defs>
+  
+  <rect x="8" y="14" width="68" height="68" rx="4" fill="#A8281C"></rect>
+  <text x="42" y="60" text-anchor="middle" font-family="Ma Shan Zheng, serif" font-size="44" fill="#F7F1E2">扔</text>
+  
+  <text x="92" y="50" font-family="ZCOOL KuaiLe, sans-serif" font-size="32" fill="#1A1612">扔鸡蛋</text>
+  <text x="92" y="78" font-family="Inter, sans-serif" font-weight="600" font-size="14" fill="#6B6358" letter-spacing="1.5">EGG · TOSS</text>
+</svg>
